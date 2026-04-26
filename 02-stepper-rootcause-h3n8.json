@@ -1,0 +1,47 @@
+{
+  "name": "Root Cause Protocol",
+  "alias": "rootcause-h3n8",
+  "description": "Escava do sintoma à causa estrutural com 5 Porquês + Ishikawa, separando causa de correlação.",
+  "visibility": "private",
+  "category": "diagnosis",
+  "tags": [
+    "diagnosis",
+    "root-cause",
+    "5whys",
+    "ishikawa"
+  ],
+  "steps": [
+    {
+      "title": "Sintoma Mensurável",
+      "description": "Reformula o problema em fato observável com métrica e gap",
+      "prompt": "Reformule o problema em forma de sintoma mensurável: (1) FATO observável (não interpretação); (2) MÉTRICA com valor atual e valor esperado; (3) GAP entre os dois; (4) IMPACTO do gap (financeiro, operacional, reputacional). Se o sintoma não for mensurável, ele não é diagnosticável — volte e reformule.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Activity"
+    },
+    {
+      "title": "5 Porquês Encadeados",
+      "description": "Investigação em cadeia disciplinada, com evidência por nível",
+      "prompt": "Aplique 5 Porquês de forma encadeada e disciplinada. Para cada nível: (1) declare a afirmação do nível anterior; (2) pergunte 'por quê?'; (3) responda com base em evidência (ou marque [HIPÓTESE]); (4) o porquê seguinte deve atacar a resposta anterior, não desviar de assunto. Pare quando: chegar a uma causa estrutural (processo, incentivo, decisão de design) OU quando começar a especular sem evidência. NÃO force exatamente 5 níveis.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "GitBranch"
+    },
+    {
+      "title": "Ishikawa (6M)",
+      "description": "Diagrama de espinha de peixe nas 6 categorias clássicas",
+      "prompt": "Construa um diagrama de Ishikawa textual com as 6 categorias: MÉTODO (processos, políticas), MÁQUINA (sistemas, ferramentas), MATERIAL (insumos, dados), MÃO-DE-OBRA (pessoas, skills, capacidade), MEDIÇÃO (KPIs, monitoramento), MEIO (ambiente, contexto organizacional). Para cada categoria, liste 1 a 3 causas potenciais com evidência. Marque [DOMINANTE] as causas que aparecem em múltiplas categorias — geralmente são as causas estruturais.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Network"
+    },
+    {
+      "title": "Causa Raiz vs Correlação",
+      "description": "Distingue causa de correlação e propõe ação corretiva",
+      "prompt": "Sintetize em 3 partes: (1) CAUSA RAIZ identificada — formulada como afirmação testável, com mecanismo causal explícito ('X acontece PORQUE Y, via mecanismo Z'); (2) CORRELAÇÕES descartadas — fatores que apareceram juntos mas não são causa (justificar); (3) AÇÃO CORRETIVA RECOMENDADA — intervenção que ataca a causa raiz, não o sintoma. Se não houver evidência suficiente para distinguir causa de correlação, declare explicitamente qual experimento decidiria.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Target"
+    }
+  ]
+}

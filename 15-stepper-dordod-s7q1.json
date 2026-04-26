@@ -1,0 +1,39 @@
+{
+  "name": "Definition of Ready/Done",
+  "alias": "dordod-s7q1",
+  "description": "Estabelece DoR e DoD validados por PO, Dev e QA para histórias e tarefas.",
+  "visibility": "private",
+  "category": "execution",
+  "tags": [
+    "dor",
+    "dod",
+    "scrum",
+    "PO"
+  ],
+  "steps": [
+    {
+      "title": "Definition of Ready (DoR)",
+      "description": "Checklist de pré-requisitos para uma história entrar em desenvolvimento",
+      "prompt": "Defina o DoR — checklist de condições mínimas para uma história/tarefa entrar em desenvolvimento. Inclua: (1) PROBLEMA do usuário descrito; (2) CRITÉRIOS DE ACEITE em formato testável; (3) DESIGN/UX disponível se aplicável; (4) DEPENDÊNCIAS técnicas mapeadas e desbloqueadas; (5) QUESTÕES ABERTAS resolvidas (lista vazia); (6) ESTIMATIVA de esforço feita pelo time; (7) PRIORIDADE definida pelo PO. Histórias que entram sem DoR custam 3x mais — interrompem fluxo, geram retrabalho.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "ClipboardCheck"
+    },
+    {
+      "title": "Definition of Done (DoD)",
+      "description": "Checklist de condições para considerar uma história entregue",
+      "prompt": "Defina o DoD — checklist de condições para considerar uma história entregue. Inclua: (1) CÓDIGO REVISADO (peer review aprovado); (2) TESTES escritos e passando (unitários e integração); (3) CRITÉRIOS DE ACEITE validados pelo PO; (4) DOCUMENTAÇÃO atualizada (técnica e/ou usuário); (5) DEPLOY em ambiente de produção; (6) MONITORAMENTO/OBSERVABILIDADE configurado; (7) DÉBITO técnico documentado se houve atalhos. Adicione critérios específicos do contexto (LGPD, acessibilidade, performance).",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "CheckCheck"
+    },
+    {
+      "title": "Validação Cruzada PO/Dev/QA",
+      "description": "Submete DoR/DoD aos 3 papéis para ajuste antes de oficializar",
+      "prompt": "Submeta o DoR e DoD à validação dos 3 papéis: (1) PO — os critérios refletem qualidade do produto, não só do código? (2) DEV/TECH LEAD — os critérios são realistas dado o contexto técnico, ou estão pedindo perfeição que paralisa? (3) QA — os critérios incluem o que precisa para validar de fato, ou só caixinha marcada? Documente os ajustes feitos. DoR/DoD não validado pelos 3 papéis é teatro de processo.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Users"
+    }
+  ]
+}

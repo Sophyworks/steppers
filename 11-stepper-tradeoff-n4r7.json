@@ -1,0 +1,38 @@
+{
+  "name": "Trade-off Matrix",
+  "alias": "tradeoff-n4r7",
+  "description": "Compara caminhos concorrentes em dimensões mensuráveis e identifica dominância.",
+  "visibility": "private",
+  "category": "decision",
+  "tags": [
+    "trade-off",
+    "decision",
+    "comparison"
+  ],
+  "steps": [
+    {
+      "title": "Caminhos Concorrentes",
+      "description": "Lista as opções comparáveis com mesma escala e objetivo final",
+      "prompt": "Liste de 2 a 5 caminhos concorrentes (opções, alternativas, propostas) que estão sendo comparados. Para cada um: nome curto, descrição em 1 frase, e premissa central. Os caminhos devem ser comparáveis — mesma escala, mesmo objetivo final. Se um caminho é fundamentalmente diferente em escopo, separe a comparação.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "GitCompare"
+    },
+    {
+      "title": "Dimensões de Trade-off",
+      "description": "Define 4-6 dimensões com método de medição explícito",
+      "prompt": "Defina de 4 a 6 DIMENSÕES de comparação relevantes para a decisão. Comece sempre por: CUSTO, PRAZO, RISCO, ESCOPO. Adicione 1-2 dimensões específicas do contexto: REVERSIBILIDADE, IMPACTO ESTRATÉGICO, COMPLEXIDADE, DEPENDÊNCIAS, FIT CULTURAL, CARGA OPERACIONAL. Para cada dimensão, defina como ela será MEDIDA (escala alto/médio/baixo, valor numérico, ou descrição qualitativa) — sem isso, a matriz vira opinião disfarçada.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Layers"
+    },
+    {
+      "title": "Matriz e Recomendação",
+      "description": "Preenche, identifica dominância e recomenda ou explicita preferência",
+      "prompt": "Construa a matriz com caminhos nas linhas e dimensões nas colunas. Preencha cada célula com a avaliação + uma frase de justificativa. Em seguida: (1) Identifique a dimensão que tem PESO DECISIVO no contexto e por quê; (2) Identifique caminhos que dominam (são melhores ou iguais em todas as dimensões versus outro) — caminhos dominados são descartados; (3) Recomende um caminho ou explicite que é uma decisão de PREFERÊNCIA (não há caminho dominante e o decisor precisa escolher qual dimensão prioriza).",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Table"
+    }
+  ]
+}

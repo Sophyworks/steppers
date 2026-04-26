@@ -1,0 +1,47 @@
+{
+  "name": "JTBD Extraction",
+  "alias": "jtbd-c8e6",
+  "description": "Extrai o trabalho funcional, social e emocional que o cliente contrata o produto para fazer.",
+  "visibility": "private",
+  "category": "discovery",
+  "tags": [
+    "jtbd",
+    "christensen",
+    "discovery",
+    "PM"
+  ],
+  "steps": [
+    {
+      "title": "Contexto da Contratação",
+      "description": "Identifica a situação que dispara a contratação do produto",
+      "prompt": "Identifique a SITUAÇÃO em que o cliente 'contrata' uma solução. Use a estrutura: 'Quando ___ (contexto/gatilho), eu quero ___ (motivação), para que eu possa ___ (resultado desejado)'. Cite o evento que dispara a contratação — não o demográfico do cliente. JTBD não é sobre quem o cliente é, é sobre o que ele está tentando realizar quando 'contrata' o produto.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Clock"
+    },
+    {
+      "title": "Job Funcional",
+      "description": "Articula o trabalho funcional com verbo + objeto + qualificadores",
+      "prompt": "Articule o JOB FUNCIONAL em uma frase com verbo de ação + objeto + qualificadores: 'O cliente está tentando [VERBO] [OBJETO] de forma [RÁPIDA/CONFIÁVEL/BARATA/etc].' Exemplos válidos: 'Tomar decisão de produto fundamentada em 1 dia em vez de 3 semanas'; 'Documentar arquitetura sem virar burocracia'. Erros comuns: descrever o produto ('usar nosso software') em vez do job ('decidir se devo construir, comprar ou parar').",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Hammer"
+    },
+    {
+      "title": "Jobs Social e Emocional",
+      "description": "Captura como o cliente quer ser percebido e como quer se sentir",
+      "prompt": "Articule as duas dimensões frequentemente esquecidas: (1) JOB SOCIAL — como o cliente quer ser PERCEBIDO pelos outros ao executar o job (ex: 'quero ser visto como decisor estruturado, não impulsivo'); (2) JOB EMOCIONAL — como ele quer SE SENTIR (ex: 'quero sentir que tomei a decisão de forma defensável caso ela falhe'). Estas dimensões geralmente explicam por que produtos funcionalmente iguais ganham ou perdem — diferenciação acontece aqui.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Heart"
+    },
+    {
+      "title": "Statement Final + Forças de Progresso",
+      "description": "Consolida o JTBD e mapeia push, pull, ansiedade e apego",
+      "prompt": "Consolide em 2 partes: (1) JTBD STATEMENT — Quando [contexto], eu quero [job funcional + social + emocional integrados], para que [resultado desejado]; (2) FORÇAS DE PROGRESSO (Christensen): forças que PUXAM o cliente para uma nova solução (push do problema atual + pull da nova) e forças que SEGURAM (ansiedade da mudança + apego ao status quo). Para o seu produto vencer, push+pull > ansiedade+apego. Identifique cada força no contexto.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "FileText"
+    }
+  ]
+}

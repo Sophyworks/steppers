@@ -1,0 +1,39 @@
+{
+  "name": "Skin in the Game Audit",
+  "alias": "skin-g3k2",
+  "description": "Mapeia quem decide, executa e sofre consequências, expondo assimetrias (Taleb).",
+  "visibility": "private",
+  "category": "governance",
+  "tags": [
+    "skin-in-the-game",
+    "taleb",
+    "governance",
+    "incentives"
+  ],
+  "steps": [
+    {
+      "title": "Mapa de Atores",
+      "description": "Lista todos os envolvidos com o que propõem, executam, ganham e perdem",
+      "prompt": "Liste todos os atores envolvidos na decisão/iniciativa. Para cada um: (1) papel; (2) o que ele PROPÕE/DECIDE; (3) o que ele EXECUTA; (4) o que ele GANHA se der certo (financeiramente, reputacionalmente, em poder); (5) o que ele PERDE se der errado. Inclua: decisores executivos, time de execução, clientes, investidores, parceiros, terceiros impactados. Atores invisíveis são frequentemente os que mais sofrem consequências.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Users"
+    },
+    {
+      "title": "Matriz Decide × Executa × Sofre",
+      "description": "Classifica em 3 colunas e marca perfis perigosos",
+      "prompt": "Para cada ator, classifique em 3 colunas binárias: DECIDE? (sim/não), EXECUTA? (sim/não), SOFRE CONSEQUÊNCIA SE ERRAR? (sim/não). Marque com [⚠] os atores com perfis perigosos: (a) DECIDE mas NÃO EXECUTA e NÃO SOFRE — clássico decisor desencarnado, alta tendência a decisões grandiosas; (b) EXECUTA mas NÃO DECIDE e SOFRE — quem paga a conta sem ter voz; (c) SOFRE mas NÃO DECIDE NEM EXECUTA — usuário/cliente externalidade. Estas assimetrias são o foco do Taleb em Skin in the Game.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Grid3x3"
+    },
+    {
+      "title": "Assimetrias e Correções",
+      "description": "Identifica as assimetrias críticas e propõe correções concretas",
+      "prompt": "Identifique as 2 a 3 ASSIMETRIAS mais críticas. Para cada uma: (1) descrição do problema (quem ganha sem risco, quem arrisca sem recompensa); (2) consequência provável se mantida (qualidade da decisão, motivação do time, confiança do cliente); (3) CORREÇÃO concreta — pode ser: trazer skin in the game para o decisor (ex: parte do bônus atrelado ao resultado da iniciativa, comprometimento público), dar voz a quem sofre a consequência (ex: cliente em comitê, operador em decisão), ou aceitar a assimetria explicitamente e compensá-la (ex: SLA com penalidade).",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "AlertTriangle"
+    }
+  ]
+}

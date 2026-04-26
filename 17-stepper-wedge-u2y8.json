@@ -1,0 +1,46 @@
+{
+  "name": "Wedge Strategy",
+  "alias": "wedge-u2y8",
+  "description": "Desenha a entrada estreita e defensável antes da expansão de mercado.",
+  "visibility": "private",
+  "category": "strategy",
+  "tags": [
+    "wedge",
+    "go-to-market",
+    "strategy"
+  ],
+  "steps": [
+    {
+      "title": "Mercado Total Ambicionado",
+      "description": "Descreve o destino de longo prazo separando-o da aposta inicial",
+      "prompt": "Descreva o mercado total que a estratégia de longo prazo busca atingir: (1) categoria de mercado; (2) tamanho aproximado (TAM em receita ou usuários); (3) tipos de cliente que existem nesse mercado (pelo menos 3 segmentos distintos); (4) por que esse mercado é atraente — taxa de crescimento, margem, defensibilidade. Esta visão grande NÃO é a aposta inicial — é o destino. Confundir os dois é como começar guerra em todas as frentes.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Globe"
+    },
+    {
+      "title": "Wedge Defensável",
+      "description": "Identifica a entrada estreita com 5 critérios de qualidade",
+      "prompt": "Identifique o WEDGE — o segmento/uso/canal específico que será atacado primeiro. Critérios para um bom wedge: (1) DOR INTENSA — clientes do segmento sofrem agudamente o problema; (2) PEQUENO O SUFICIENTE para você dominar; (3) CONECTADO ao mercado maior (vencer aqui dá legitimidade para expandir); (4) SUBSERVIDO pelos concorrentes (eles ignoram, simplificam ou atendem mal); (5) DEFENSÁVEL — você tem vantagem estrutural específica. Descreva o wedge em uma frase: 'Para [SEGMENTO ESPECÍFICO] que sofre [DOR ESPECÍFICA], oferecemos [SOLUÇÃO ESPECÍFICA].'",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Crosshair"
+    },
+    {
+      "title": "Por que esse wedge?",
+      "description": "Justifica em vantagem própria, fraqueza dos concorrentes e potencial de expansão",
+      "prompt": "Justifique a escolha do wedge em 4 dimensões: (1) por que VOCÊ pode vencer aqui (vantagem estrutural — expertise, rede, custo, posicionamento); (2) por que CONCORRENTES não vão atender bem este wedge (incentivos, foco, escala); (3) por que vencer aqui ABRE o mercado adjacente (mecanismo de expansão — mesmo cliente compra mais, segmento adjacente similar, capacidade ganha aplica em outro segmento); (4) qual a EVIDÊNCIA inicial de que o wedge é real (entrevistas, vendas, sinais de uso).",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Award"
+    },
+    {
+      "title": "Critério de Expansão",
+      "description": "Define marcos de domínio, próximo segmento e armadilhas a evitar",
+      "prompt": "Defina os marcos para sair do wedge e expandir: (1) MARCO DE DOMÍNIO — qual % de penetração ou receita no wedge sinaliza que está 'ganho' (ex: 30% dos clientes-alvo do segmento, R$ X em ARR, NPS > Y); (2) PRÓXIMO SEGMENTO/USO a atacar — qual é o adjacente óbvio e por quê; (3) CAPABILITY GANHA no wedge que destrava o próximo (não só receita — aprendizado de produto, dado, marca, parceria); (4) ARMADILHAS — por onde NÃO expandir (segmentos que parecem similares mas exigem produto diferente). Sair cedo do wedge = nunca dominar nada.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "ArrowUpRight"
+    }
+  ]
+}

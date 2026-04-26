@@ -1,0 +1,39 @@
+{
+  "name": "Feature Kill Criteria",
+  "alias": "killfeat-z1m4",
+  "description": "Define antes do lançamento as métricas e prazos que justificariam matar a feature.",
+  "visibility": "private",
+  "category": "product",
+  "tags": [
+    "feature",
+    "kill-criteria",
+    "PM",
+    "metrics"
+  ],
+  "steps": [
+    {
+      "title": "Hipótese de Valor da Feature",
+      "description": "Articula problema, mecanismo, resultado esperado e usuário-alvo",
+      "prompt": "Articule a hipótese de valor da feature em formato testável: (1) PROBLEMA que ela resolve para o usuário; (2) MECANISMO pelo qual a feature resolve; (3) RESULTADO esperado (comportamento do usuário, métrica de produto, métrica de negócio); (4) USUÁRIO-ALVO específico (não 'todos os usuários'). Sem essa formulação, não há base para definir critério de morte — só haveria critério vago de 'parece que não deu certo'.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Lightbulb"
+    },
+    {
+      "title": "Métricas de Vida e Morte",
+      "description": "Define adoção, impacto e custo com mínimo aceitável e alvo",
+      "prompt": "Defina 3 categorias de métricas: (1) MÉTRICA DE ADOÇÃO — quantos usuários-alvo descobrem e usam a feature (ex: % de ativação em 30 dias); (2) MÉTRICA DE IMPACTO — efeito no comportamento que justifica a feature existir (ex: retenção, conversão, NPS específico); (3) MÉTRICA DE CUSTO — custo de manutenção, suporte, débito acumulado. Para cada métrica, defina: valor mínimo aceitável (abaixo disso = feature morrendo), valor-alvo (saudável), e baseline atual (se já lançada).",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "BarChart"
+    },
+    {
+      "title": "Prazo e Protocolo de Morte",
+      "description": "Especifica prazo, critério binário, responsável e desligamento",
+      "prompt": "Especifique o protocolo de morte: (1) PRAZO de avaliação — quando os critérios serão checados (ex: 90 dias após lançamento, no início de cada quarter); (2) CRITÉRIO DE MORTE — formulação binária: 'A feature será descontinuada SE [adoção < X] E [impacto < Y] E não houver experimento de remediação ativo'; (3) RESPONSÁVEL pela decisão de matar; (4) PROTOCOLO DE DESLIGAMENTO — comunicação ao usuário, migração, débito a ser limpo. Critérios sem responsável e sem prazo são negação institucionalizada.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Skull"
+    }
+  ]
+}

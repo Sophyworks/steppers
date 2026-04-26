@@ -1,0 +1,38 @@
+{
+  "name": "Divergence Mapping",
+  "alias": "diverge-y2v6",
+  "description": "Força 7+ soluções estruturalmente diferentes e mapeia em esforço × novidade.",
+  "visibility": "private",
+  "category": "ideation",
+  "tags": [
+    "divergence",
+    "ideation",
+    "creativity"
+  ],
+  "steps": [
+    {
+      "title": "Reformulação como HMW",
+      "description": "Estrutura o problema em pergunta 'Como Poderíamos' bem calibrada",
+      "prompt": "Reformule o problema como uma pergunta 'COMO PODERÍAMOS...?' (HMW). A pergunta deve: (1) ser ampla o suficiente para admitir múltiplas soluções estruturalmente diferentes; (2) ser estreita o suficiente para não ser genérica ('como podemos crescer?' é inútil); (3) não conter solução embutida ('como podemos lançar uma app de IA?' já decidiu a solução). Reformule até passar nos 3 testes.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "MessageCircleQuestion"
+    },
+    {
+      "title": "7+ Soluções Diferentes",
+      "description": "Gera diversidade estrutural forçada, não variações cosméticas",
+      "prompt": "Gere no MÍNIMO 7 soluções para a HMW, FORÇANDO diversidade estrutural. Cada solução deve operar em um modo diferente — não 7 variações da mesma ideia. Use estes gatilhos para forçar divergência: (1) solução por produto, (2) por processo/operação, (3) por modelo de negócio, (4) por parceria, (5) por automação/IA, (6) por subtração (REMOVER algo em vez de adicionar), (7) por inversão (fazer o oposto do óbvio). Adicione mais se conseguir. Bane variações cosméticas.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Lightbulb"
+    },
+    {
+      "title": "Mapa Esforço × Novidade",
+      "description": "Posiciona soluções em 2D e identifica zona quente",
+      "prompt": "Organize as soluções em um mapa 2D: eixo X = ESFORÇO de implementação (baixo→alto), eixo Y = GRAU DE NOVIDADE/DISRUPÇÃO (incremental→radical). Posicione cada solução. Identifique: (1) zona quente — alta novidade, esforço médio; (2) zona morta — baixa novidade, alto esforço (descartar); (3) apostas seguras — baixa novidade, baixo esforço (executar mas não esperar muito). Recomende 2 a 3 soluções para investigar mais a fundo.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Map"
+    }
+  ]
+}

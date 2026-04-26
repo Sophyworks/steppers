@@ -1,0 +1,47 @@
+{
+  "name": "Hypothesis Tree",
+  "alias": "hyptree-q9p4",
+  "description": "Decompõe a aposta central em sub-hipóteses falsificáveis com critério de teste.",
+  "visibility": "private",
+  "category": "strategy",
+  "tags": [
+    "hypothesis",
+    "strategy",
+    "mece",
+    "PM"
+  ],
+  "steps": [
+    {
+      "title": "Aposta Central",
+      "description": "Formula a hipótese-raiz no padrão SE/ENTÃO/PORQUE",
+      "prompt": "Formule a hipótese-raiz da árvore em uma única sentença com estrutura: 'SE [intervenção/aposta], ENTÃO [resultado mensurável], PORQUE [mecanismo causal]'. A hipótese deve ser falsificável: deve ser possível imaginar um experimento ou observação que a refute. Se você não consegue imaginar como ela seria provada errada, ela ainda não é uma hipótese — é uma crença.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Lightbulb"
+    },
+    {
+      "title": "Sub-hipóteses MECE",
+      "description": "Decompõe a raiz em 3-5 ramos mutuamente exclusivos e exaustivos",
+      "prompt": "Decomponha a hipótese-raiz em 3 a 5 sub-hipóteses que sejam mutuamente exclusivas (não se sobrepõem) e coletivamente exaustivas (cobrem o espaço todo). Cada sub-hipótese deve ter a mesma estrutura SE/ENTÃO/PORQUE. Teste de MECE: se todas as sub-hipóteses fossem verdadeiras, a hipótese-raiz seria automaticamente verdadeira? Se alguma sub-hipótese fosse falsa, qual parte da raiz cairia?",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "GitBranch"
+    },
+    {
+      "title": "Critério de Falsificação",
+      "description": "Define como cada folha será testada — evidência, método, custo",
+      "prompt": "Para cada sub-hipótese, defina: (1) EVIDÊNCIA OBSERVÁVEL que a confirmaria; (2) EVIDÊNCIA OBSERVÁVEL que a refutaria; (3) MÉTODO de coleta dessa evidência (entrevista, A/B test, análise de dado existente, prototipação, observação direta); (4) CUSTO ESTIMADO em tempo e recurso. Hipóteses sem critério claro de falsificação são removidas da árvore — não há como testá-las.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "FlaskConical"
+    },
+    {
+      "title": "Árvore Final e Sequência de Testes",
+      "description": "Consolida a árvore e ordena testes por aprendizado/custo",
+      "prompt": "Apresente a árvore consolidada em formato hierárquico (raiz → sub-hipóteses → critérios). Em seguida, ordene as sub-hipóteses por: (a) impacto se confirmada, (b) custo de teste, (c) dependência (algumas só fazem sentido testar se outras forem verdadeiras). Recomende a SEQUÊNCIA DE TESTES — qual hipótese atacar primeiro, segundo, terceiro — com justificativa baseada em maior aprendizado por menor custo.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Network"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Stakeholder Power Map",
+  "alias": "powermap-v5w9",
+  "description": "Cruza poder × interesse × posição atual e define estratégia de engajamento.",
+  "visibility": "private",
+  "category": "governance",
+  "tags": [
+    "stakeholder",
+    "power-map",
+    "PM",
+    "engagement"
+  ],
+  "steps": [
+    {
+      "title": "Lista de Stakeholders",
+      "description": "Mapeia patrocinadores, decisores, influenciadores e quem pode vetar",
+      "prompt": "Liste todos os stakeholders relevantes para esta iniciativa. Inclua: patrocinadores executivos, decisores formais, influenciadores informais, usuários do produto, donos de processos vizinhos impactados, áreas de risco/jurídico/segurança, e qualquer ator que pode VETAR ou ATRASAR. Para cada um: nome do papel (não pessoa), área, e relação direta com a iniciativa em uma frase. Stakeholders esquecidos no mapeamento aparecem como surpresas — e geralmente atrasam o projeto.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Users"
+    },
+    {
+      "title": "Eixo Poder × Interesse",
+      "description": "Classifica em matriz 2x2 e define modo de gestão por quadrante",
+      "prompt": "Para cada stakeholder, atribua: (1) PODER sobre o resultado da iniciativa — alto, médio, baixo (capacidade de aprovar, vetar, alocar recurso, bloquear); (2) INTERESSE no tema — alto, médio, baixo (quanto se importam, quanto isso afeta seus KPIs). Posicione cada stakeholder em uma matriz 2x2: ALTO PODER × ALTO INTERESSE = gerenciar de perto; ALTO PODER × BAIXO INTERESSE = manter satisfeito; BAIXO PODER × ALTO INTERESSE = manter informado; BAIXO PODER × BAIXO INTERESSE = monitorar.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Grid3x3"
+    },
+    {
+      "title": "Posição Atual",
+      "description": "Classifica como apoiador/neutro/cético/opositor com evidência",
+      "prompt": "Para cada stakeholder, classifique a POSIÇÃO ATUAL em relação à iniciativa: APOIADOR ATIVO (defende publicamente), APOIADOR PASSIVO (concorda mas não age), NEUTRO, CÉTICO (questiona mas não bloqueia), OPOSITOR (bloqueia ativamente). Justifique cada classificação com 1 evidência (fala registrada, decisão passada, comportamento observado). Atenção: assumir apoio sem evidência é a fonte #1 de surpresas em projetos.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "UserCheck"
+    },
+    {
+      "title": "Estratégia de Engajamento",
+      "description": "Define movimento, ação, responsável e prazo focando alto poder",
+      "prompt": "Defina ações específicas por stakeholder, priorizando os de ALTO PODER. Para cada um: (1) MOVIMENTO necessário (manter como está, mover de cético para neutro, transformar apoiador passivo em ativo); (2) AÇÃO concreta (1:1, demo, dado, envolvimento em decisão); (3) RESPONSÁVEL pelo engajamento; (4) PRAZO. Foco: 80% do esforço nos stakeholders de alto poder com posição negativa ou neutra. Stakeholders de baixo poder não consomem tempo de engajamento ativo.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Target"
+    }
+  ]
+}

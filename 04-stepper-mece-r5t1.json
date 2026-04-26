@@ -1,0 +1,38 @@
+{
+  "name": "MECE Decomposition",
+  "alias": "mece-r5t1",
+  "description": "Quebra um problema em partes mutuamente exclusivas e coletivamente exaustivas.",
+  "visibility": "private",
+  "category": "structuring",
+  "tags": [
+    "mece",
+    "structuring",
+    "analysis"
+  ],
+  "steps": [
+    {
+      "title": "Universo Total",
+      "description": "Define o todo a ser decomposto, com fronteira clara",
+      "prompt": "Defina o universo total a ser decomposto: (1) declaração do problema/objeto em uma sentença; (2) fronteira — o que está dentro e o que está fora; (3) tamanho/escala se aplicável (volume, valor, contagem). Esta etapa fixa o 'todo' que precisa ser coberto pelas partes — sem isso, exhaustividade é impossível de verificar.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Package"
+    },
+    {
+      "title": "Eixo de Decomposição",
+      "description": "Escolhe o critério de divisão e justifica a escolha",
+      "prompt": "Escolha o EIXO pelo qual o universo será dividido. Eixos comuns: por tipo, por etapa do processo, por segmento de cliente, por região, por causa, por canal, por horizonte temporal. Justifique a escolha do eixo: por que esse eixo é mais útil para a decisão a ser tomada do que os alternativos? Decomposições MECE com eixo errado são tecnicamente corretas mas inúteis.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Compass"
+    },
+    {
+      "title": "Decomposição e Validação",
+      "description": "Lista as categorias e aplica os 2 testes (ME e CE)",
+      "prompt": "Liste as 3 a 7 categorias da decomposição. Em seguida, aplique os 2 testes: (1) MUTUAMENTE EXCLUSIVAS — qualquer item do universo cai em UMA categoria apenas? Liste 3 itens-teste e classifique; (2) COLETIVAMENTE EXAUSTIVAS — todo o universo está coberto? Existe algum item que não cabe em nenhuma categoria? Se algum teste falhar, ajuste as categorias e reteste. Conclua com a versão MECE final.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "CheckCircle"
+    }
+  ]
+}

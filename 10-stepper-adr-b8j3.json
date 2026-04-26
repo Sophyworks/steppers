@@ -1,0 +1,46 @@
+{
+  "name": "Architecture Decision Record",
+  "alias": "adr-b8j3",
+  "description": "Documenta decisão técnica com contexto, opções, escolha e consequências aceitas.",
+  "visibility": "private",
+  "category": "architecture",
+  "tags": [
+    "adr",
+    "architecture",
+    "tech-lead"
+  ],
+  "steps": [
+    {
+      "title": "Contexto e Forças",
+      "description": "Documenta situação, forças em tensão, restrições e hipóteses",
+      "prompt": "Documente o CONTEXTO da decisão arquitetural em 4 seções: (1) Situação atual — que arquitetura/componente está em discussão e por quê agora; (2) Forças em tensão — requisitos não-funcionais conflitantes (performance × custo, simplicidade × flexibilidade, time-to-market × manutenibilidade); (3) Restrições — tecnológicas, organizacionais, regulatórias; (4) Hipóteses sobre o futuro — escala esperada, evolução do produto, mudança de equipe. Linguagem técnica precisa.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "FileText"
+    },
+    {
+      "title": "Opções Consideradas",
+      "description": "Lista mínimo 3 opções com prós, contras, custo e reversibilidade",
+      "prompt": "Liste no mínimo 3 opções arquiteturais. Para cada uma: (1) descrição técnica em 2-3 frases; (2) prós principais (relacionados às forças do passo anterior); (3) contras principais; (4) custo de implementação (esforço relativo); (5) reversibilidade (se descobrirmos que foi a opção errada, como revertemos?). Inclua sempre a opção 'fazer nada / status quo' como baseline.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Layers"
+    },
+    {
+      "title": "Decisão e Justificativa",
+      "description": "Apresenta a escolha sendo honesta sobre o que está sendo sacrificado",
+      "prompt": "Apresente a DECISÃO em formato direto: (1) Opção escolhida; (2) Justificativa em 3 a 5 bullets, referenciando explicitamente quais forças/restrições foram priorizadas e quais foram aceitas como sacrifício; (3) Decisor responsável (papel) e data; (4) Stakeholders consultados. ADR forte é honesto sobre o que está sendo SACRIFICADO, não vende a decisão.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "CheckCircle"
+    },
+    {
+      "title": "Consequências e Status",
+      "description": "Documenta efeitos positivos, negativos, trade-offs e ponto de revisão",
+      "prompt": "Documente as CONSEQUÊNCIAS da decisão: (1) Positivas — o que ganhamos; (2) Negativas — o que perdemos ou comprometemos (débito técnico assumido, flexibilidade reduzida, dependência criada); (3) Trade-offs aceitos — itens que sabemos que vão doer mas escolhemos suportar; (4) Pontos de revisão — quando e sob quais condições este ADR deve ser reaberto. Termine com STATUS: Proposed / Accepted / Deprecated / Superseded by [ADR-XXX].",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "AlertCircle"
+    }
+  ]
+}

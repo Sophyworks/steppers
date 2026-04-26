@@ -1,0 +1,46 @@
+{
+  "name": "Problem Intelligence Brief",
+  "alias": "probintel-k7m2",
+  "description": "Transforma sintoma vago em problema bem-formulado, com atores, contexto, restrições e critério de sucesso.",
+  "visibility": "private",
+  "category": "discovery",
+  "tags": [
+    "discovery",
+    "problem-framing",
+    "PM"
+  ],
+  "steps": [
+    {
+      "title": "Sintoma Observável",
+      "description": "Captura o fenômeno concreto, mensurável, sem causas presumidas",
+      "prompt": "Descreva o sintoma observável que motivou esta investigação em até 4 frases. Inclua: (1) o fenômeno concreto que pode ser visto/medido, (2) métrica ou indicador associado (com valor atual e baseline), (3) quando o sintoma começou a aparecer, (4) onde ele ocorre (sistema, jornada, segmento). Proibido: causas presumidas, soluções, julgamentos. Apenas o sintoma.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Eye"
+    },
+    {
+      "title": "Atores e Contexto",
+      "description": "Mapeia quem é afetado, quem percebe, quem ganha com a solução",
+      "prompt": "Identifique: (1) QUEM é afetado pelo sintoma — segmento de usuário, papel, volume aproximado; (2) QUEM percebe o sintoma — pode ser diferente de quem é afetado; (3) QUEM ganha se o problema for resolvido — stakeholders internos e externos; (4) CONTEXTO em que o sintoma aparece — gatilhos, frequência, condições. Para cada item, evidência concreta (dado, ticket, entrevista) ou marque [SEM EVIDÊNCIA].",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Users"
+    },
+    {
+      "title": "Restrições e Não-objetivos",
+      "description": "Explicita fronteiras de escopo e premissas que não serão questionadas",
+      "prompt": "Explicite as fronteiras do problema: (1) RESTRIÇÕES — limites de escopo, orçamento, prazo, regulação, dependências técnicas; (2) NÃO-OBJETIVOS — o que está fora do escopo desta investigação (problemas vizinhos que NÃO serão atacados); (3) PREMISSAS QUE NÃO SERÃO QUESTIONADAS — assunções tomadas como dadas para fechar o escopo. Esta etapa evita scope creep e expõe trade-offs aceitos.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Filter"
+    },
+    {
+      "title": "Brief Final",
+      "description": "Consolida o Problem Intelligence Brief em uma página com critério de sucesso",
+      "prompt": "Consolide um Problem Intelligence Brief estruturado em 6 seções, máximo 1 página: (1) Sintoma — formulação final, sem ambiguidade; (2) Atores Afetados — quem e quanto; (3) Contexto e Frequência; (4) Restrições e Não-objetivos; (5) CRITÉRIO DE SUCESSO — como saberemos que o problema foi resolvido (métrica, valor-alvo, prazo); (6) PRÓXIMO PASSO RECOMENDADO — descoberta adicional, prototipação, ou decisão executiva. Linguagem precisa, sem hedge.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "FileText"
+    }
+  ]
+}

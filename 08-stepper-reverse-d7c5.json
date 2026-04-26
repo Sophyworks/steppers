@@ -1,0 +1,38 @@
+{
+  "name": "Reversible vs Irreversible",
+  "alias": "reverse-d7c5",
+  "description": "Classifica a decisão como porta de mão única ou dupla e calibra rigor (Bezos).",
+  "visibility": "private",
+  "category": "decision",
+  "tags": [
+    "decision",
+    "bezos",
+    "risk"
+  ],
+  "steps": [
+    {
+      "title": "Anatomia da Decisão",
+      "description": "Articula escolha, ativos, janela e partes irreversíveis",
+      "prompt": "Articule a decisão em estrutura clara: (1) ESCOLHA — qual a opção principal a ser tomada; (2) ATIVOS COMPROMETIDOS — capital, tempo, reputação, contratos, pessoas; (3) JANELA DE EXECUÇÃO — quando precisa ser tomada e por quê; (4) PARTES IRREVERSÍVEIS — o que, uma vez feito, não pode ser desfeito (ou só pode com custo proibitivo).",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "FileText"
+    },
+    {
+      "title": "Teste das 2 Portas",
+      "description": "Avalia custo de reversão e classifica one-way / two-way / híbrida",
+      "prompt": "Aplique o teste das duas portas (Bezos): (1) Se a decisão se mostrar errada em 6 meses, qual o CUSTO de reverter? Em dinheiro, tempo, relacionamento, reputação, oportunidade perdida. (2) É possível reverter parcialmente? (3) Existe um EXIT estruturado (cláusula contratual, opt-out, marco de revisão)? Classifique a decisão: ONE-WAY DOOR (irreversível, custo alto), TWO-WAY DOOR (reversível, custo baixo), HÍBRIDA (reversível com custo significativo).",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "GitCompare"
+    },
+    {
+      "title": "Calibração de Rigor",
+      "description": "Recomenda processo proporcional à reversibilidade",
+      "prompt": "Recomende o nível de rigor adequado à classificação: TWO-WAY DOOR — decida rápido com 70% de informação, otimize para velocidade, viés à ação. ONE-WAY DOOR — exija 90%+ de informação, múltiplos níveis de revisão, plano de contingência detalhado, comitê. HÍBRIDA — defina explicitamente os marcos de revisão e os critérios de pivot/persist. Conclua com: nível de rigor recomendado, processo proposto, e responsável final pela decisão.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Scale"
+    }
+  ]
+}

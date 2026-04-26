@@ -1,0 +1,46 @@
+{
+  "name": "Pricing Hypothesis",
+  "alias": "pricing-a4d2",
+  "description": "Formula a hipótese de captura de valor (modelo, métrica, faixa) e teste de validação.",
+  "visibility": "private",
+  "category": "monetization",
+  "tags": [
+    "pricing",
+    "monetization",
+    "strategy"
+  ],
+  "steps": [
+    {
+      "title": "Modelo de Cobrança",
+      "description": "Escolhe o modelo de monetização e justifica vs alternativas",
+      "prompt": "Escolha o MODELO de cobrança e justifique: (1) opções principais — assinatura recorrente (mensal/anual), uso/consumo (por evento, por API call, por GB), licenciamento perpétuo, freemium com upgrade, transacional (% do volume), híbrido; (2) qual modelo se ALINHA ao valor entregue (cliente paga conforme extrai valor); (3) qual o atrito de adoção de cada modelo no seu ICP; (4) qual a previsibilidade de receita para o negócio. Modelo errado = ou subprecifica ou cria atrito enorme de venda.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "DollarSign"
+    },
+    {
+      "title": "Métrica de Valor",
+      "description": "Identifica a unidade que escala com o sucesso do cliente",
+      "prompt": "Identifique a MÉTRICA DE VALOR — a unidade que cresce conforme o cliente extrai mais valor. Boa métrica de valor: (1) é fácil para o cliente entender; (2) escala com o sucesso do cliente (não com o seu custo); (3) não pune o uso saudável (gerar receita pune adoção). Exemplos: usuários ativos, transações processadas, decisões tomadas, projetos analisados. Para o seu produto, qual métrica passa nos 3 testes? Justifique vs. alternativas descartadas.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "BarChart"
+    },
+    {
+      "title": "Faixa de Preço com Anchor",
+      "description": "Estabelece valor percebido, alternativas e WTP em 3 tiers",
+      "prompt": "Estabeleça a faixa de preço com 3 referências: (1) VALOR PERCEBIDO — qual a economia ou ganho que o cliente faz ao usar o produto (use número concreto, com premissas explícitas); (2) ALTERNATIVAS — quanto o cliente paga hoje pelas alternativas (incluindo o custo do status quo: tempo gasto em planilha, salário do analista que faria o trabalho); (3) WILLINGNESS-TO-PAY — quanto cliente declarou em entrevistas estar disposto a pagar. Proponha 3 tiers (ex: Entrada / Padrão / Avançado) com preços e ANCHOR em cada.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Tag"
+    },
+    {
+      "title": "Teste de Validação",
+      "description": "Desenha experimento, amostra, métricas e critério de decisão",
+      "prompt": "Desenhe o EXPERIMENTO para validar a hipótese de pricing antes de fixar: (1) MÉTODO — pode ser Van Westendorp (Price Sensitivity Meter), entrevistas com janela de preço, A/B com 2 níveis, oferta com desconto reverso para descobrir piso, page de pricing com diferentes valores e medir conversão; (2) AMOSTRA — quantos clientes/prospects, de qual segmento; (3) MÉTRICAS — taxa de aceite, abandono na faixa, pedidos de desconto, churn declarado por preço; (4) CRITÉRIO DE DECISÃO — qual resultado leva a manter, ajustar para cima, ajustar para baixo. Pricing sem teste é chute disfarçado de estratégia.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "FlaskConical"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Positioning Canvas",
+  "alias": "position-i9o5",
+  "description": "Articula categoria, alternativas, atributos únicos, valor e ICP no padrão Dunford.",
+  "visibility": "private",
+  "category": "marketing",
+  "tags": [
+    "positioning",
+    "dunford",
+    "marketing",
+    "strategy"
+  ],
+  "steps": [
+    {
+      "title": "Alternativas Competitivas",
+      "description": "Lista o que o cliente realmente compara, incluindo o status quo",
+      "prompt": "Liste 3 a 5 ALTERNATIVAS que o cliente realmente considera (não os concorrentes que VOCÊ vê — os que o CLIENTE compara). Inclua: (1) concorrentes diretos; (2) concorrentes indiretos (substitutos funcionais); (3) status quo (não fazer nada, planilha, processo manual). Para cada alternativa: como o cliente a percebe, principais limitações que ele sente. Erro comum: subestimar o status quo — ele é o concorrente mais difícil em quase todo mercado B2B.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Users"
+    },
+    {
+      "title": "Atributos Únicos",
+      "description": "Filtra atributos verdadeiros, demonstráveis e relevantes",
+      "prompt": "Liste os ATRIBUTOS que o seu produto tem e as alternativas NÃO têm (ou têm em grau muito menor). Atributos podem ser: capacidades técnicas, modelo de negócio, abordagem metodológica, integrações, dados, expertise. Filtro: cada atributo deve ser (a) verdadeiro objetivamente, (b) demonstrável, (c) relevante para o cliente. Atributos que parecem únicos mas todos os concorrentes também têm são removidos — viram ruído.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Star"
+    },
+    {
+      "title": "Valor Entregue",
+      "description": "Traduz cada atributo em valor para o cliente e agrupa em temas",
+      "prompt": "Para CADA atributo único do passo anterior, traduza para o VALOR que ele entrega ao cliente. Use a estrutura: 'Como o atributo [X], o cliente consegue [VALOR — resultado, capacidade nova, custo evitado, risco reduzido].' Atributo sem valor traduzido é feature inútil. Em seguida, agrupe os valores em 2 a 4 TEMAS de valor (ex: velocidade de decisão, qualidade da decisão, defensibilidade da decisão).",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Gift"
+    },
+    {
+      "title": "Segmento Ideal (ICP)",
+      "description": "Define quem mais valoriza os temas, com critérios e anti-ICP",
+      "prompt": "Defina o ICP — segmento que mais valoriza os temas de valor identificados. Critérios do ICP: (1) demográfico/firmográfico — tipo de empresa/papel; (2) psicográfico — o que valorizam, como decidem; (3) sintomas — dores específicas que indicam que precisam URGENTEMENTE; (4) anti-ICP — quem NÃO é cliente apesar de parecer (custos de servir altos, ROI baixo, mismatch de expectativa). Posicionamento sem ICP claro vira mensagem genérica.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Target"
+    },
+    {
+      "title": "Categoria e Statement Final",
+      "description": "Encaixa em categoria mental e produz o statement Dunford",
+      "prompt": "Encaixe o produto em uma CATEGORIA mental do cliente — a 'caixa' onde ele te coloca antes de comparar. Categoria pode ser existente (entrar e dominar) ou nova (categoria design — alta dificuldade, alto retorno). Em seguida, produza o POSITIONING STATEMENT no formato Dunford: 'Para [ICP], que precisa [valor principal], [PRODUTO] é uma [CATEGORIA] que, diferente de [ALTERNATIVAS], oferece [ATRIBUTOS ÚNICOS] resultando em [TEMAS DE VALOR].' Este statement orienta toda a comunicação de marketing, vendas e produto.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Compass"
+    }
+  ]
+}

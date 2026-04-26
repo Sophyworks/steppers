@@ -1,0 +1,46 @@
+{
+  "name": "Build vs Buy vs Partner",
+  "alias": "buildbuy-f6h0",
+  "description": "Decide o modo de obtenção de uma capability via TCO, time-to-value e dependência.",
+  "visibility": "private",
+  "category": "decision",
+  "tags": [
+    "build-vs-buy",
+    "architecture",
+    "decision"
+  ],
+  "steps": [
+    {
+      "title": "Capability Necessária",
+      "description": "Define a capacidade exata e classifica como core ou support",
+      "prompt": "Defina com precisão a CAPABILITY que precisa ser obtida: (1) o que ela faz (output funcional); (2) por que é necessária (qual problema resolve); (3) é CORE ou SUPPORT? (core = parte da proposta de valor única; support = necessária mas commodity); (4) qual o nível de maturidade interna atual (zero, parcial, avançada). Esta classificação muda completamente a decisão — capabilities support raramente devem ser construídas.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Wrench"
+    },
+    {
+      "title": "Análise das 3 Opções",
+      "description": "Avalia Build/Buy/Partner em 6 dimensões com matriz",
+      "prompt": "Para cada opção (BUILD, BUY, PARTNER), avalie 6 dimensões:\n• CUSTO TOTAL (TCO) em 3 anos — desenvolvimento + operação + manutenção.\n• TIME-TO-VALUE — quando começa a gerar valor real.\n• CONTROLE E DIFERENCIAÇÃO — quanto a opção contribui para um diferencial defensável.\n• RISCO DE EXECUÇÃO — probabilidade de não entregar conforme planejado.\n• DEPENDÊNCIA EXTERNA — lock-in, risco de fornecedor, perda de soberania.\n• OPCIONALIDADE FUTURA — quão fácil é mudar de opção depois (build pode ser substituído? contrato tem cláusula de saída?).\nUse uma matriz simples (alto/médio/baixo) com justificativa de uma linha cada.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "GitCompare"
+    },
+    {
+      "title": "Heurísticas de Decisão",
+      "description": "Aplica regras de bolso e identifica qual domina o caso",
+      "prompt": "Aplique heurísticas: (1) Se a capability é CORE e é fonte de diferenciação → tendência forte para BUILD. (2) Se é SUPPORT e existe solução madura no mercado → tendência forte para BUY. (3) Se é CORE mas exige expertise que não temos e demora demais para desenvolver → PARTNER pode ser ponte (com plano de internalização). (4) Se time-to-value é crítico (janela de mercado) → BUY/PARTNER vence BUILD. Aponte qual heurística domina neste caso e por quê.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "ListChecks"
+    },
+    {
+      "title": "Recomendação Justificada",
+      "description": "Decisão final, riscos e condições de revisão",
+      "prompt": "Produza a recomendação final em 4 partes: (1) DECISÃO — Build, Buy ou Partner; (2) JUSTIFICATIVA em 3 frases referenciando dimensões e heurísticas dos passos anteriores; (3) RISCOS PRINCIPAIS desta escolha e como serão mitigados; (4) CONDIÇÕES DE REVISÃO — em que circunstâncias revisitaríamos a decisão (ex: se TCO real ultrapassar X, se fornecedor mudar termos, se a capability virar core).",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "CheckCircle"
+    }
+  ]
+}

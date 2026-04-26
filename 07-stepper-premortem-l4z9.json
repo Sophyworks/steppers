@@ -1,0 +1,47 @@
+{
+  "name": "Pre-mortem",
+  "alias": "premortem-l4z9",
+  "description": "Projeta o fracasso 18 meses à frente para expor riscos antes da execução (Klein).",
+  "visibility": "private",
+  "category": "risk",
+  "tags": [
+    "pre-mortem",
+    "risk",
+    "planning",
+    "klein"
+  ],
+  "steps": [
+    {
+      "title": "Definição do Sucesso (T+18m)",
+      "description": "Descreve o cenário de sucesso completo com números concretos",
+      "prompt": "Projete-se 18 meses no futuro assumindo que a iniciativa foi um SUCESSO COMPLETO. Descreva em 3 a 5 frases: (1) o que existe agora que não existia antes; (2) métricas atingidas (com números); (3) qual a posição da empresa/produto no mercado; (4) o que os clientes falam sobre isso. Esta visão concreta é o ponto de comparação para o cenário de fracasso.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Trophy"
+    },
+    {
+      "title": "Cenário de Fracasso Vívido",
+      "description": "Reescreve o mesmo horizonte como post-mortem do fracasso catastrófico",
+      "prompt": "Agora reescreva o mesmo horizonte temporal, mas a iniciativa FRACASSOU CATASTROFICAMENTE. Escreva como se fosse um post-mortem real: o que aconteceu, em que momento começou a dar errado, qual o estado atual (produto descontinuado, time desfeito, perda financeira). Vívido e específico — não abstrato. Esta vivacidade é o que faz o pre-mortem funcionar (Klein).",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "AlertTriangle"
+    },
+    {
+      "title": "5 Causas Mais Prováveis",
+      "description": "Lista as causas distribuídas entre tese, execução, timing, externo, organizacional",
+      "prompt": "Liste as 5 causas mais prováveis que levaram ao fracasso descrito. Distribua as causas entre: (a) erro de tese (a aposta estava errada desde o início); (b) erro de execução (a aposta estava certa mas executamos mal); (c) erro de timing (certa mas cedo/tarde demais); (d) fator externo (concorrência, regulação, mercado); (e) fator interno organizacional (incentivos, capacidade, cultura). Para cada causa, indique o sinal precoce que a teria revelado.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "ListChecks"
+    },
+    {
+      "title": "Mitigações + Triggers de Aborto",
+      "description": "Define ação preventiva, sinal de alerta e ponto de cancelamento",
+      "prompt": "Para cada uma das 5 causas, defina: (1) MITIGAÇÃO — ação concreta a tomar ANTES de começar (ou nas primeiras 4 semanas) para reduzir a probabilidade da causa se manifestar; (2) SINAL DE ALERTA — métrica ou observação que, se aparecer, indica que a causa está se materializando; (3) TRIGGER DE ABORTO — em que ponto reconhecemos derrota e cancelamos. Mitigações sem trigger viram negação.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Shield"
+    }
+  ]
+}

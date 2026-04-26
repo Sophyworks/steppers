@@ -1,0 +1,46 @@
+{
+  "name": "TOWS to Action",
+  "alias": "tows-w8x3",
+  "description": "Cruza SWOT em 4 quadrantes e converte cada um em iniciativas priorizadas.",
+  "visibility": "private",
+  "category": "strategy",
+  "tags": [
+    "tows",
+    "swot",
+    "strategy"
+  ],
+  "steps": [
+    {
+      "title": "SWOT Base",
+      "description": "Captura forças, fraquezas, oportunidades e ameaças com evidência",
+      "prompt": "Liste de forma disciplinada: 3 a 5 FORÇAS internas (capacidades, ativos, posicionamento já consolidados — não desejos), 3 a 5 FRAQUEZAS internas (gaps reais, não pseudo-fraquezas como 'somos perfeccionistas demais'), 3 a 5 OPORTUNIDADES externas (movimentos de mercado, regulação, tecnologia), 3 a 5 AMEAÇAS externas (concorrência, mudança de demanda, risco macro). Cada item com evidência concreta.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Layers"
+    },
+    {
+      "title": "Cruzamento TOWS",
+      "description": "Combina os 4 quadrantes em estratégias SO/ST/WO/WT",
+      "prompt": "Cruze os elementos em 4 quadrantes:\n• SO (Forças × Oportunidades): como usar forças para capturar oportunidades — estratégia ofensiva.\n• ST (Forças × Ameaças): como usar forças para neutralizar ameaças — estratégia defensiva.\n• WO (Fraquezas × Oportunidades): quais fraquezas precisam ser corrigidas para não perder oportunidades — estratégia de melhoria.\n• WT (Fraquezas × Ameaças): onde estamos mais vulneráveis — estratégia de mitigação/contenção.\nGere 2 a 3 ideias por quadrante.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "ArrowLeftRight"
+    },
+    {
+      "title": "Iniciativas Concretas",
+      "description": "Converte cada ideia em iniciativa com responsável, prazo e métrica",
+      "prompt": "Converta cada ideia dos 4 quadrantes em INICIATIVA acionável com: (1) descrição em uma frase imperativa ('Lançar X', 'Encerrar Y'); (2) responsável sugerido (papel, não nome); (3) horizonte (30/90/180 dias); (4) métrica de sucesso; (5) custo de oportunidade (o que NÃO vai ser feito por causa disso). Iniciativas sem responsável e métrica são removidas.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "ListChecks"
+    },
+    {
+      "title": "Priorização e Plano de 30 dias",
+      "description": "Ordena em AGORA/DEPOIS/MONITORAR e fecha plano de 5 iniciativas",
+      "prompt": "Priorize todas as iniciativas em 3 grupos: AGORA (executar nos próximos 30 dias, alta urgência ou pré-requisito), DEPOIS (60-90 dias, valor alto mas não urgente), MONITORAR (manter no radar, executar quando condição X). Justifique cada classificação. Termine com um plano de 30 dias com no máximo 5 iniciativas — foco vence quantidade.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Flag"
+    }
+  ]
+}
