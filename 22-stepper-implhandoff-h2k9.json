@@ -1,0 +1,50 @@
+{
+  "name": "Implementation Handoff Brief",
+  "alias": "implhandoff-h2k9",
+  "description": "Produz o spec unificado em 3 lentes (backend, frontend, QA) necessário para o time sênior iniciar o desenvolvimento de forma independente e consistente.",
+  "visibility": "private",
+  "category": "execution",
+  "tags": ["handoff", "implementation", "backend", "frontend", "qa", "spec"],
+  "steps": [
+    {
+      "title": "Escopo e Critérios de Aceite",
+      "description": "Define o terreno comum compartilhado pelas 3 lentes — o que será construído e como saberemos que está feito.",
+      "prompt": "Defina o escopo da entrega em formato implementável:\n\n1. O QUE será construído — descrição em 2 a 3 frases, em termos de capability entregue ao usuário (não em termos de implementação técnica).\n2. O QUE NÃO será construído — fronteiras explícitas para evitar scope creep. Liste itens vizinhos que poderiam ser confundidos como parte da entrega.\n3. CRITÉRIOS DE ACEITE em formato Given/When/Then — observáveis, testáveis, sem ambiguidade. Cada critério precisa ser verificável por um terceiro sem precisar de explicação adicional.\n4. CONTEXTO DE USO — quem usa, quando, com qual frequência, em qual jornada maior se insere.\n5. RESTRIÇÕES CONHECIDAS — prazo, dependências externas, regulação, decisões técnicas já tomadas (referenciar ADRs se houver).\n\nEste passo é o terreno comum que as 3 lentes (backend, frontend, QA) compartilham. Inconsistência aqui = inconsistência multiplicada nas 3 specs seguintes.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Target"
+    },
+    {
+      "title": "Lente Backend",
+      "description": "Especificação para um desenvolvedor backend sênior começar o trabalho.",
+      "prompt": "Produza a especificação para um DESENVOLVEDOR BACKEND SÊNIOR começar o trabalho de forma independente. Cubra obrigatoriamente:\n\n1. MODELO DE DADOS — entidades, atributos com tipo, relações, persistência (nome de tabela/coleção quando aplicável). Indique se é dado novo ou alteração de modelo existente.\n2. CONTRATOS DE API — para cada endpoint: método HTTP, path, payload de request, payload de response (sucesso e erro), códigos HTTP relevantes, formato de erro padronizado.\n3. INTEGRAÇÕES — serviços externos e internos consumidos, modos de falha esperados, política de retry, fallback, timeout.\n4. AUTENTICAÇÃO E AUTORIZAÇÃO — quem pode acessar o quê. Especifique escopos, papéis, regras de propriedade do recurso.\n5. REQUISITOS NÃO-FUNCIONAIS — latência esperada (p50, p95, p99), throughput, escala prevista, observabilidade (logs estruturados, métricas, tracing).\n6. CASOS DE BORDA — estados inválidos, condições de corrida, idempotência, comportamento sob retry, ordenação de eventos.\n7. MIGRAÇÃO DE DADOS — se houver dado existente a tratar, defina estratégia e plano de rollback.\n\nLinguagem técnica precisa. Item não especificado = item que o desenvolvedor sênior vai inventar — e na pressa, vai inventar errado.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Server"
+    },
+    {
+      "title": "Lente Frontend",
+      "description": "Especificação para um desenvolvedor frontend sênior começar o trabalho.",
+      "prompt": "Produza a especificação para um DESENVOLVEDOR FRONTEND SÊNIOR começar o trabalho de forma independente. Cubra obrigatoriamente:\n\n1. JORNADA DO USUÁRIO — passos do início ao fim da feature, em formato de fluxo numerado. Inclua pontos de decisão e ramificações.\n2. ESTADOS POR TELA — para cada tela envolvida, descreva no mínimo: estado vazio, carregando, sucesso, erro, sem permissão. Estados ausentes na spec viram bugs em produção.\n3. COMPONENTES — quais componentes do design system existente serão usados; quais são novos e precisam ser criados (descrever comportamento esperado de cada um).\n4. INTERAÇÕES E VALIDAÇÕES — regras de validação de input (com mensagens), transições, feedback ao usuário, comportamento offline ou de conexão lenta.\n5. CONSUMO DE API — quais endpoints serão chamados (referenciar os contratos da Lente Backend), tratamento de erro por endpoint, otimismo de UI quando aplicável, cache.\n6. RESPONSIVIDADE — breakpoints, comportamento em mobile, tablet e desktop, diferenças de layout entre tamanhos.\n7. ACESSIBILIDADE — navegação por teclado, leitores de tela, contraste mínimo, atributos ARIA, foco visível.\n\nFrontend sênior não precisa de pixel-perfect, precisa de regras claras de comportamento. Pixel-perfect sem regra é o pior dos dois mundos.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Layout"
+    },
+    {
+      "title": "Lente QA",
+      "description": "Especificação para um QA sênior começar a planejar testes em paralelo ao desenvolvimento.",
+      "prompt": "Produza a especificação para um QA SÊNIOR começar a planejar e escrever testes EM PARALELO ao desenvolvimento (não depois). Cubra obrigatoriamente:\n\n1. CENÁRIOS DE TESTE em formato Given/When/Then, divididos em 3 grupos:\n   • HAPPY PATH — fluxo principal funcionando como esperado.\n   • CASOS DE BORDA — limites, valores extremos, estados raros mas válidos (lista vazia, valor zero, máximo permitido, caracteres especiais, timezones, etc).\n   • CASOS DE ERRO — falhas esperadas: input inválido, permissão negada, recurso inexistente, integração indisponível, conflito de concorrência.\n2. DADOS DE TESTE — quais massas, fixtures ou seeds são necessários. Indique se já existem, precisam ser criados, ou exigem dados sensíveis (com plano de anonimização).\n3. AMBIENTES — onde cada cenário roda (local, dev, staging, produção sintética). Indique dependências externas (mockáveis ou reais).\n4. ESCOPO DE REGRESSÃO — quais áreas EXISTENTES do produto podem ser afetadas e precisam ser retestadas. Sem isso, regressão vira loteria.\n5. AUTOMAÇÃO vs MANUAL — quais cenários entram em suíte automatizada (e em qual nível: unit, integração, e2e), quais ficam em exploratório manual e por quê.\n6. PERFORMANCE E CARGA — se aplicável: limites a verificar, ferramentas de teste, critério de aprovação ligado aos NFRs declarados na Lente Backend.\n\nCritério de aceite que não pode ser convertido em cenário testável deve voltar ao passo 1 e ser reformulado. Não há QA sênior que valide ambiguidade.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "ShieldCheck"
+    },
+    {
+      "title": "Consistência e Veredito de Prontidão",
+      "description": "Valida coerência entre as 3 lentes, fecha questões abertas e emite veredito honesto de prontidão.",
+      "prompt": "Valide a coerência entre as 3 lentes e produza o veredito de prontidão em 6 partes:\n\n1. CONSISTÊNCIA DE CONTRATO — o contrato de API descrito na Lente Backend é exatamente o que a Lente Frontend consome? Liste discrepâncias (campo a mais, nome divergente, tipo diferente, código de erro não tratado). Discrepância aqui = bug garantido na integração.\n\n2. CONSISTÊNCIA DE CRITÉRIO — todos os critérios de aceite do passo 1 estão cobertos por pelo menos um cenário de QA do passo 4? Liste critérios sem cobertura. Critério não coberto = entrega que pode passar sem validação real.\n\n3. CONSISTÊNCIA DE ESTADO — os estados de tela do Frontend (vazio, erro, sem permissão) correspondem a respostas reais que o Backend efetivamente retorna? Estado de UI sem resposta correspondente = tela que nunca aparece OU resposta que trava o app.\n\n4. QUESTÕES ABERTAS — liste tudo que ainda não foi decidido, com responsável e prazo para decidir. Inclua tanto questões de produto quanto técnicas.\n\n5. DEPENDÊNCIAS E SEQUÊNCIA — o que precisa estar pronto antes do quê? Backend bloqueia Frontend? Vale mock paralelo? QA pode começar com cenários antes do código? Existe dependência externa (outro time, fornecedor, regulação)?\n\n6. VEREDITO DE PRONTIDÃO — escolha uma das três opções com justificativa:\n   • PRONTO PARA COMEÇAR — as 3 lentes estão completas e consistentes entre si.\n   • PRONTO COM RESSALVAS — pode começar, listar exatamente o que ainda precisa ser resolvido durante a execução e até quando.\n   • NÃO PRONTO — faltam itens X, Y, Z. Voltar para os passos correspondentes antes de iniciar a sprint.\n\nHonestidade neste passo economiza semanas de retrabalho. Veredito otimista forçado é a fonte número um de sprints que viram débito.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "CheckCircle"
+    }
+  ]
+}
