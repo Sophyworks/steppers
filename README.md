@@ -1,7 +1,4 @@
 # Sophyworks Steppers
-Open-source collection structured reasoning steppers for product and strategy work each stepper is a JSON-defined prompt sequence that guides an LLM through a specific framework for Sophyworks Steppers. 
-
-# Structured Thinking Steppers
 
 > A library of structured reasoning workflows for product, strategy, and architecture decisions.
 
@@ -109,6 +106,7 @@ Steppers are organized by the stage of work they support. The library grows over
 ### Architecture & Execution
 
 - **Architecture Decision Record (ADR)** — Documents a technical decision with context, options considered, choice, and accepted consequences.
+- **Implementation Handoff Brief** — Produces a unified spec across three lenses (backend, frontend, QA) that lets a senior team start development independently and consistently.
 - **Definition of Ready / Done** — Establishes DoR and DoD validated by PO, Dev, and QA for stories and tasks.
 - **Feature Kill Criteria** — Defines, before launch, the metrics and timing that would justify killing the feature.
 
