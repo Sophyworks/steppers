@@ -1,0 +1,57 @@
+{
+  "name": "Solution Analysis",
+  "alias": "solution-x9p3",
+  "description": "Analisa hipóteses de solução de uma demanda: mapeia, avalia pros/contras, define critérios de aceitação, associa riscos e produz documentação técnica com diagramas.",
+  "visibility": "private",
+  "category": "decision",
+  "tags": [
+    "solution",
+    "hypothesis",
+    "assessment",
+    "architecture",
+    "risks",
+    "acceptance-criteria"
+  ],
+  "steps": [
+    {
+      "title": "Mapeamento das Hipóteses",
+      "description": "Contextualiza e categoriza cada solução candidata antes da análise",
+      "prompt": "Liste todas as hipóteses de solução da demanda. Para cada uma: (1) NOME CURTO e status atual (analysis / valid / invalid); (2) PREMISSA CENTRAL — o que ela assume como verdadeiro para funcionar; (3) CATEGORIA — Build (construção interna), Buy (aquisição de produto pronto), Hire (contratação de serviço) ou Hybrid; (4) HORIZONTE DE ENTREGA estimado (semanas ou meses); (5) DEPENDÊNCIAS CRÍTICAS — o que precisa existir ou ser decidido para essa hipótese ser executável. Ao final, identifique se alguma hipótese é fundamentalmente incompatível com outra (mutuamente excludentes) ou se podem coexistir (complementares). Marque as hipóteses que serão analisadas em profundidade nas próximas etapas — descarte apenas aquelas obviamente inviáveis já neste mapeamento, com justificativa explícita.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "GitBranch"
+    },
+    {
+      "title": "Assessment: Drivers e Bloqueadores",
+      "description": "Para cada solução válida, identifica pros (drivers) e contras (blockers) com evidência",
+      "prompt": "Para cada hipótese que sobreviveu ao mapeamento, construa um assessment estruturado em duas listas: DRIVERS (pros) e BLOQUEADORES (contras). Regras: (1) cada item deve ter no máximo 2 linhas — seja específico, não genérico; (2) todo pro ou contra deve ter uma consequência explícita ('isso significa que...'); (3) pese dimensões como: CUSTO (curto e longo prazo), PRAZO (time-to-market), AUTONOMIA (controle sobre roadmap e dados), RISCO TÉCNICO, REVERSIBILIDADE (quão difícil é mudar depois) e FIT ESTRATÉGICO (alinhamento com o modelo de negócio de longo prazo). Mínimo de 3 drivers e 3 bloqueadores por hipótese. Não repita o mesmo argumento em hipóteses diferentes com palavras diferentes — se um ponto é compartilhado, declare explicitamente.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Scale"
+    },
+    {
+      "title": "Critérios de Aceitação por Solução",
+      "description": "Define métricas mensuráveis de sucesso para cada solução analisada",
+      "prompt": "Para cada hipótese em análise, defina de 2 a 5 critérios de aceitação mensuráveis. Cada critério deve ter: (1) TÍTULO claro do que será validado; (2) VARIÁVEL — o que exatamente será medido e em qual condição; (3) VALOR ESPERADO — com número, percentual ou condição booleana objetiva; (4) CLASSIFICAÇÃO — funcional, performance, segurança, usabilidade, conformidade ou OKR; (5) ESCOPO — quais soluções esse critério se aplica (pode ser compartilhado entre hipóteses). Critérios compartilhados entre múltiplas hipóteses (ex: conformidade LGPD) devem ser declarados uma única vez com o escopo explícito. Evite critérios vagos como 'funcionar corretamente' ou 'ser rápido' — toda métrica deve ter um threshold que permita dizer 'passou' ou 'não passou'.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "ClipboardCheck"
+    },
+    {
+      "title": "Riscos Vinculados",
+      "description": "Identifica e associa riscos específicos de cada solução com plano de mitigação",
+      "prompt": "Para cada hipótese, identifique de 1 a 3 riscos específicos que ESSA solução cria ou amplifica (não riscos genéricos do domínio — esses já existem na Matriz de Riscos geral). Para cada risco: (1) TÍTULO do risco — concreto e específico; (2) MECANISMO DE DANO — como esse risco se materializa, por qual sequência de eventos; (3) DANO PRIMÁRIO — o impacto direto se o risco ocorrer (financeiro, operacional, reputacional, legal); (4) AÇÃO PREVENTIVA — o que reduz a probabilidade de ocorrência; (5) AÇÃO DE CONTINGÊNCIA — o que fazer se já ocorreu, para limitar o dano. Marque riscos como EXCLUSIVOS (afetam só essa hipótese) ou COMPARTILHADOS (afetam múltiplas). Riscos compartilhados entre hipóteses devem ter análise diferenciada de como cada hipótese os amplifica ou atenua.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "ShieldAlert"
+    },
+    {
+      "title": "Documentação Técnica e Diagramas",
+      "description": "Produz arquitetura, fluxos e planos de execução para cada solução válida",
+      "prompt": "Para cada hipótese válida, produza a documentação técnica mínima necessária para um time de engenharia iniciar. Organize em blocos por hipótese: (1) DIAGRAMA DE COMPONENTES ou ARQUITETURA — em formato Mermaid (flowchart ou sequenceDiagram), mostrando as principais peças do sistema e suas integrações; (2) FLUXO CRÍTICO — o fluxo end-to-end da funcionalidade de maior risco técnico (ex: pagamento, autenticação, sincronização offline), também em Mermaid; (3) DECISÕES DE DESIGN — no máximo 5 decisões arquiteturais que precisam ser tomadas antes do primeiro PR (ex: 'usar JWT vs session cookie', 'PostgreSQL vs MongoDB', 'monolito vs microserviços'); (4) GAPS DE INFORMAÇÃO — perguntas que o time técnico precisa que o PO ou stakeholder responda antes de iniciar o desenvolvimento. Formato final: Markdown com blocos de código Mermaid embutidos, pronto para ser colado em um NoteShift doc.",
+      "outputType": "md",
+      "autoPlay": false,
+      "iconName": "FileCode"
+    }
+  ]
+}
