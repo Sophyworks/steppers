@@ -1,0 +1,57 @@
+{
+  "name": "Readiness Audit",
+  "alias": "sw-readiness-k7m2",
+  "description": "Audita se uma demanda tem artefatos suficientes para iniciar o desenvolvimento. Cobre produto, arquitetura, qualidade e entrega — e entrega um veredicto acionável.",
+  "visibility": "private",
+  "category": "diagnosis",
+  "tags": [
+    "readiness",
+    "audit",
+    "discovery",
+    "pre-dev",
+    "product",
+    "architecture"
+  ],
+  "steps": [
+    {
+      "title": "Inventário de Artefatos",
+      "description": "Cataloga tudo que existe na demanda e avalia a qualidade de cada item",
+      "prompt": "Faça um inventário completo dos artefatos presentes na demanda. Para cada item encontrado, avalie: (1) EXISTE (sim/não/parcial); (2) QUALIDADE (alta / média / baixa / vazia); (3) SUFICIÊNCIA para dev (suficiente / insuficiente / ausente). Organize em quatro grupos: PRODUTO (descrição, scope matrix, personas, personas com conteúdo, JTBDs, hipótese de problema, evidências, situação atual); ESTRATÉGIA (hipóteses de solução com status, análise de mercado TAM/SAM/SOM, concorrentes, análise legal); TÉCNICO (stack definida, documentos NoteShift, diagramas PUML/C4, modelo de dados, decisões de arquitetura); QUALIDADE & ENTREGA (critérios de aceitação, CSD matrix, plano de sprints, squad definido, repositório). Ao final, liste apenas os itens com status AUSENTE ou INSUFICIENTE — esses são os candidatos a bloqueadores.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "ClipboardList"
+    },
+    {
+      "title": "Bloqueadores Críticos",
+      "description": "Classifica os gaps em bloqueadores críticos, altos e médios com justificativa de impacto",
+      "prompt": "Pegue a lista de itens AUSENTES ou INSUFICIENTES do inventário e classifique cada um em três níveis: CRÍTICO (impede qualquer início de desenvolvimento — sem isso, o time vai na direção errada ou em círculos), ALTO (impede a sprint 1 ou onboarding do time técnico), MÉDIO (pode evoluir iterativamente sem parar o dev). Para cada bloqueador crítico, detalhe: (1) O QUE falta exatamente; (2) POR QUÊ bloqueia — qual decisão ou entrega fica impossível sem ele; (3) QUEM precisa responder (PO, Arquiteto, Time, Stakeholder externo). Não liste mais de 8 bloqueadores críticos — se tiver mais, agrupe por tema. Marque se o bloqueador é de PRODUTO, TÉCNICO ou PROCESSO.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "ShieldAlert"
+    },
+    {
+      "title": "Score de Prontidão",
+      "description": "Pontua a demanda em quatro dimensões e gera o score composto de prontidão",
+      "prompt": "Atribua uma nota de 0 a 10 para cada uma das quatro dimensões, com justificativa em uma frase por nota. As dimensões são: (1) ESTRATÉGIA & PRODUTO — clareza do problema, escopo delimitado, personas com conteúdo, hipóteses de solução validadas; (2) ARQUITETURA & TÉCNICO — stack definida, diagramas existentes, decisões de design registradas, modelo de dados esboçado; (3) QUALIDADE (QA) — critérios de aceitação com métricas, CSD matrix preenchida, cenários de teste identificados; (4) PLANO DE ENTREGA — sprints definidas, squad nomeado, repositório criado, Sprint 0 planejado. Em seguida: calcule o SCORE COMPOSTO (soma / 40, exibido como percentual e como nota /10). Classifique o resultado em: VERDE (≥ 70% — pronto para dev), AMARELO (40–69% — Sprint 0 necessária), VERMELHO (< 40% — ainda em Discovery, não iniciar dev). Exiba um resumo visual em formato de tabela.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "Gauge"
+    },
+    {
+      "title": "Plano de Remediação",
+      "description": "Gera um backlog priorizado de ações para fechar os gaps antes do dev iniciar",
+      "prompt": "Com base nos bloqueadores identificados e no score de prontidão, monte um PLANO DE REMEDIAÇÃO em três horizontes: ANTES DE QUALQUER CÓDIGO (ações para fechar bloqueadores críticos — normalmente Sprint 0 ou uma semana de Discovery intensivo), SPRINT 1 (ações que podem acontecer em paralelo ao início de dev de baixo risco), ITERATIVO (ações que evoluem ao longo do projeto). Para cada ação: (1) ARTEFATO a criar ou decisão a tomar; (2) RESPONSÁVEL sugerido (PO, Arquiteto, QA, UX, Time); (3) ESFORÇO estimado (horas ou dias); (4) DESBLOQUEIO — qual bloqueador crítico ela resolve. Ao final, estime: se todas as ações do horizonte 1 forem executadas, o score subiria de X para Y%? Justifique.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "ListChecks"
+    },
+    {
+      "title": "Veredicto Final",
+      "description": "Emite o veredicto de prontidão com recomendação clara e próximos passos numerados",
+      "prompt": "Emita o VEREDICTO FINAL em três partes estruturadas: (1) VEREDICTO — uma das três classificações (PRONTO PARA DEV / SPRINT 0 NECESSÁRIA / AINDA EM DISCOVERY) com uma frase de justificativa objetiva; (2) PONTOS FORTES — os 2 ou 3 artefatos ou decisões que já estão sólidos e devem ser preservados; (3) PRÓXIMOS PASSOS NUMERADOS — lista ordenada de no máximo 7 ações concretas, com verbo de ação, responsável e prazo sugerido (em dias). O veredicto deve ser direto e acionável — evite linguagem ambígua como 'pode ser que' ou 'talvez seja útil'. Se a recomendação for não iniciar o dev, explique exatamente o que mudaria essa decisão.",
+      "outputType": "text",
+      "autoPlay": false,
+      "iconName": "BadgeCheck"
+    }
+  ]
+}
