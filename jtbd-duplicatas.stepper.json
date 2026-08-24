@@ -1,0 +1,67 @@
+{
+  "sophyworks": "stepper",
+  "version": 1,
+  "stepper": {
+    "name": "Duplicidade de JTBDs",
+    "alias": "jtbd-duplicatas",
+    "description": "Fluxo guiado que verifica quais JTBDs de uma demanda têm jornadas semelhantes (cálculo por embedding), detalha os percentuais de cada parecido e recomenda o que fazer com cada possível duplicata.",
+    "visibility": "project",
+    "type": "menu",
+    "sectionId": "problem-jtdb",
+    "category": "Discovery",
+    "tags": [
+      "jtbd",
+      "duplicatas",
+      "similaridade",
+      "análise"
+    ],
+    "iconName": null,
+    "steps": [
+      {
+        "title": "Definir a demanda-alvo",
+        "description": "Identificar a demanda cujos JTBDs serão analisados",
+        "prompt": "Identifique a demanda-alvo da análise de duplicidade de JTBDs. Use {{userInput}} como pista inicial: se citar uma demanda por nome ou título, resolva com list_demands e confirme com o usuário antes de continuar. Se houver uma demanda corrente no contexto, use-a sem perguntar. Ao final, apresente o título da demanda escolhida.",
+        "outputType": "text",
+        "autoPlay": true,
+        "iconName": "target",
+        "model": null
+      },
+      {
+        "title": "Inventário de JTBDs",
+        "description": "Listar os Jobs To Be Done da demanda com status",
+        "prompt": "Com o demand_id definido no passo anterior, chame list_jtbd(demand_id) e liste todos os JTBDs com nome e status (valid = Aprovado, analysis = Em análise, invalid = Rejeitado). Se a lista estiver vazia, informe que a demanda não tem JTBDs e encerre o fluxo por aqui.",
+        "outputType": "list",
+        "autoPlay": true,
+        "iconName": "list",
+        "model": null
+      },
+      {
+        "title": "Radar de duplicatas",
+        "description": "Quais JTBDs têm parecidos e quantos (visão agregada)",
+        "prompt": "Chame get_jtbd_similarities(demand_id) SEM jtbd_id para obter a visão agregada: quais JTBDs da demanda têm jornadas parecidas e quantas cada um tem. Apresente a lista nome + quantidade. NÃO compare os textos manualmente — use apenas o número pré-calculado por embedding que a tool devolve. Se nenhum JTBD tiver parecidos, informe e encerre.",
+        "outputType": "list",
+        "autoPlay": true,
+        "iconName": "radar",
+        "model": null
+      },
+      {
+        "title": "Detalhar similaridades",
+        "description": "Percentuais de semelhança dos parecidos de cada JTBD com duplicatas",
+        "prompt": "Para cada JTBD que apareceu com parecidos no passo anterior, chame get_jtbd_similarities(demand_id, jtbd_id) e monte uma tabela: JTBD analisado, jornada parecida, percentual de semelhança e onde a parecida vive (mesma demanda ou outra). Marque como candidata forte a duplicata tudo com percentual alto (acima de 80%). Pergunte ao usuário se quer aprofundar algum caso específico antes de seguir.",
+        "outputType": "table",
+        "autoPlay": false,
+        "iconName": "chart",
+        "model": null
+      },
+      {
+        "title": "Recomendar ações",
+        "description": "Síntese com ação recomendada para cada duplicata",
+        "prompt": "Sintetize os achados em três grupos: candidatos fortes a duplicata, semelhanças legítimas (variações do mesmo job com propósito distinto) e casos neutros. Para cada grupo recomende uma ação: diferenciar/editar, mesclar em um único JTBD ou manter como está. NUNCA edite, marque status ou remova JTBDs sem confirmação explícita do usuário — apenas proponha.",
+        "outputType": "md",
+        "autoPlay": false,
+        "iconName": "lightbulb",
+        "model": null
+      }
+    ]
+  }
+}
